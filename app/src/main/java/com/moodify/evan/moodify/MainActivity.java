@@ -1,5 +1,13 @@
 package com.moodify.evan.moodify;
 
+        //Stuff for music player tutorial
+        import java.util.*;
+        import android.net.Uri;
+        import android.content.ContentResolver;
+        import android.database.Cursor;
+        import android.widget.ListView;
+
+
         import android.app.Activity;
         import android.content.Intent;
         import android.os.Bundle;
@@ -26,6 +34,10 @@ public class MainActivity extends Activity implements
     private Player mPlayer;
     private static final int REQUEST_CODE = 1337;
 
+    // Stuff for music player tutorial
+    private ArrayList<Song> songList;
+    private ListView songView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +50,8 @@ public class MainActivity extends Activity implements
         AuthenticationRequest request = builder.build();
 
         AuthenticationClient.openLoginActivity(this, REQUEST_CODE, request);
+
+        //songView = (ListView)findViewById(R.id.song_List);
     }
 
     @Override
